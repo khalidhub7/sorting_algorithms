@@ -1,18 +1,21 @@
 #include "sort.h"
 /**
- * bubble_sort - sort array of integer
- * @array: array of int
- * @size: size of array
+ *bubble_sort - sort array of integer
+ *use bubble sort algorithm
+ *
+ *@array: array of int
+ *@size: size of array
+ *
 */
 void bubble_sort(int *array, size_t size)
 {
-	int tmp; /*use for swap*/
-	int i = 0, j = 0; /*used for loop*/
+	int tmp;
+	size_t i, j;
 
 	if (!array || !size)
-	{
 		return;
-	}
+
+	i = 0;
 	while (i < size)
 	{
 		for (j = 0; j < size - 1; j++)
