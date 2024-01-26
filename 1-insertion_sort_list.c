@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * swp - function that swap 2 nodes in doubly linked list
  * @x: address of first node
@@ -13,10 +14,11 @@ void swp(listint_t *x, listint_t *y)
 	if (y->next)
 		y->next->prev = x;
 	x->next = y->next;
-	y-prev = x->prev;
+	y->prev = x->prev;
 	x->prev = y;
 	y->next = x;
 }
+
 /**
  * insertion_sort_list - insertion sort in doubly linked list
  * @list: address of ptr to head node
