@@ -55,4 +55,6 @@ void swp_nod_ahead_(listint_t **list, listint_t **tail, listint_t **shker);
 void swpp_nod_behind(listint_t **list, listint_t **tail, listint_t **shker);
 void cocktail_sort_list(listint_t **list);
 
+int geet_maxx(int *array, int sizee);
+void counting_sort(int *array, size_t size);
 #endif
