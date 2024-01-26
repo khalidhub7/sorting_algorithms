@@ -12,7 +12,7 @@ void swp(listint_t *x, listint_t *y)
 	if (y->next)
 		y->next->prev = x;
 	x->next = y->next;
-	y->prev = x->prev;
+	y-prev = x->prev;
 	x->prev = y;
 	y->next = x;
 }
