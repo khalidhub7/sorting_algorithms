@@ -1,4 +1,19 @@
 #include "sort.h"
+
+/**
+ * swp_int3 - Swap 2 int in array
+ * @a: The first int to swap
+ * @b: The second int to swap
+ */
+void swp_int3(int *x, int *b)
+{
+	int tmp;
+
+	tmp = *x;
+	*x = *b;
+	*b = tmp;
+}
+
 /**
  * shell_sort - Sort an array of int in ascending
  *              order using the shell sort algorithm

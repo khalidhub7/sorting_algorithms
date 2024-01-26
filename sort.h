@@ -38,4 +38,5 @@ void lomt_sort(int *array, size_t size, int left, int right);
 void quick_sort(int *array, size_t size);
 
 void shell_sort(int *array, size_t size);
+void swp_int3(int *x, int *b);
 #endif
