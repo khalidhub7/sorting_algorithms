@@ -1,21 +1,21 @@
 #include "sort.h"
 
 /**
- * swp_int3 - Swap 2 int in array
- * @a: The first int to swap
- * @b: The second int to swap
+ * swp_int3 - Swap 2 int in an array
+ * @a: first integer to swap
+ * @b: second integer to swap
  */
-void swp_int3(int *x, int *b)
+void swp_int3(int *a, int *b)
 {
 	int tmp;
 
-	tmp = *x;
-	*x = *b;
+	tmp = *a;
+	*a = *b;
 	*b = tmp;
 }
 
 /**
- * shell_sort - Sort an array of int in ascending
+ * shell_sort - Sort array of int in ascending
  *              order using the shell sort algorithm
  * @array: array of int
  * @size: size of array
@@ -24,23 +24,23 @@ void swp_int3(int *x, int *b)
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t gappp, i, j;
+	size_t ggap, i, j;
 
 	if (array == NULL || size < 2)
 		return;
 
-	for (gappp = 1; gappp < (size / 3);)
-		gappp = gappp * 3 + 1;
+	for (ggap = 1; ggap < (size / 3);)
+		ggap = ggap * 3 + 1;
 
-	for (; gappp >= 1; gappp /= 3)
+	for (; ggap >= 1; ggap /= 3)
 	{
-		for (i = gappp; i < size; i++)
+		for (i = ggap; i < size; i++)
 		{
 			j = i;
-			while (j >= gappp && array[j - gappp] > array[j])
+			while (j >= ggap && array[j - ggap] > array[j])
 			{
-				swp_int2(array + j, array + (j - gappp));
-				j -= gappp;
+				swp_int3(array + j, array + (j - ggap));
+				j -= ggap;
 			}
 		}
 		print_array(array, size);
