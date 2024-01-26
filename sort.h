@@ -31,4 +31,9 @@ void swp(listint_t *x, listint_t *y);
 
 void selection_sort(int *array, size_t size);
 void swp_intt(int *x, int *g);
+
+void swp_int2(int *x, int *b);
+int lomt_parti(int *array, size_t size, int left, int right);
+void lomt_sort(int *array, size_t size, int left, int right);
+void quick_sort(int *array, size_t size);
 #endif
