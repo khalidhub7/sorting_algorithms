@@ -8,8 +8,7 @@
  * @mid: middle index of array
  * @back: back index of array
  */
-void merge_suubarr_(int *sbarr, int *buf, size_t front, size_t mid,
-		size_t back)
+void merge_suubarr_(int *sbarr, int *buf, size_t front, size_t mid, size_t back)
 {
 	size_t i, j, x = 0;
 
