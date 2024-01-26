@@ -3,6 +3,7 @@
  * swp - function that swap 2 nodes in doubly linked list
  * @x: address of first node
  * @y: address of second node
+ *
  * Return: void
 */
 void swp(listint_t *x, listint_t *y)
@@ -19,6 +20,7 @@ void swp(listint_t *x, listint_t *y)
 /**
  * insertion_sort_list - insertion sort in doubly linked list
  * @list: address of ptr to head node
+ *
  * Return: void
 */
 void insertion_sort_list(listint_t **list)
@@ -27,7 +29,7 @@ void insertion_sort_list(listint_t **list)
 
 	if (!list || !*list || !(*list)->next)
 		return;
-	i = 0;
+	i = (*list)->next;
 	while (i)
 	{
 		j = i;
