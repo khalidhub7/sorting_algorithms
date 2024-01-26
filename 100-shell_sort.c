@@ -24,7 +24,7 @@ void shell_sort(int *array, size_t size)
 			j = i;
 			while (j >= gappp && array[j - gappp] > array[j])
 			{
-				swap_ints(array + j, array + (j - gappp));
+				swp_int2(array + j, array + (j - gappp));
 				j -= gappp;
 			}
 		}
