@@ -59,5 +59,7 @@ void cocktail_sort_list(listint_t **list);
 int geet_maxx(int *array, int sizee);
 void counting_sort(int *array, size_t size);
 
-
+void swp_int4(int *x, int *b);
+void max_hea(int *array, size_t size, size_t basee, size_t root);
+void heap_sort(int *array, size_t size);
 #endif
