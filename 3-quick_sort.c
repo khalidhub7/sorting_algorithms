@@ -1,90 +1,77 @@
 #include "sort.h"
 
 /**
- * swp_int2 - Swap 2 int in array.
- * @x: The first integer to swap.
- * @b: The second integer to swap.
+ * mrge_sbarr - Sort subarray of int
+ * @subarr: subarray of an array of integers to sort.
+ * @buff: buffer to store the sorted subarray
+ * @front: front index of the array
+ * @mid: middle index of the array
+ * @back: back index of the array
  */
-void swp_int2(int *x, int *b)
+void mrge_sbarr(int *subarr, int *buff, size_t front, size_t mid,
+		size_t back)
 {
-	int tmp_;
+	size_t i, j, k = 0;
 
-	tmp_ = *x;
-	*x = *b;
-	*b = tmp_;
+	printf("Merging...\n[left]: ");
+	print_array(subarr + front, mid - front);
+
+	printf("[right]: ");
+	print_array(subarr + mid, back - mid);
+
+	for (i = front, j = mid; i < mid && j < back; k++)
+		buff[k] = (subarr[i] < subarr[j]) ? subarr[i++] : subarr[j++];
+	for (; i < mid; i++)
+		buff[k++] = subarr[i];
+	for (; j < back; j++)
+		buff[k++] = subarr[j];
+	for (i = front, k = 0; i < back; i++)
+		subarr[i] = buff[k++];
+
+	printf("[Done]: ");
+	print_array(subarr + front, back - front);
 }
 
 /**
- * lomt_parti - Order a subset of an array of int according to
- *                    the lomuto partition scheme (last element as pivot)
- * @array: The array of int
- * @size: size of array
- * @left: starting index of the subset to order
- * @right: ending index of the subset to order
- *
- * Return: The final partition index
+ * mrge_srt_rec - Implement merge sort algorithm through recursion
+ * @subarr: subarray of array of int to sort
+ * @buff: buffer to store the sorted result
+ * @front: front index of the subarray
+ * @back: back index of the subarray
  */
-int lomt_parti(int *array, size_t size, int left, int right)
+void mrge_srt_rec(int *subarr, int *buff, size_t front, size_t back)
 {
-	int *pivott, aabove, beloow;
+	size_t mid;
 
-	pivott = array + right;
-	for (aabove = beloow = left; beloow < right; beloow++)
+	if (back - front > 1)
 	{
-		if (array[beloow] < *pivott)
-		{
-			if (aabove < beloow)
-			{
-				swp_int2(array + beloow, array + aabove);
-				print_array(array, size);
-			}
-			aabove++;
-		}
-	}
-
-	if (array[aabove] > *pivott)
-	{
-		swp_int2(array + aabove, pivott);
-		print_array(array, size);
-	}
-
-	return (aabove);
-}
-
-/**
- * lomt_sort - Implement quicksort algorithm through recursion
- * @array: array of integers to sort
- * @size: size of array
- * @left: starting index of the array partition to order
- * @right: ending index of the array partition to order
- *
- * Description: Uses the Lomuto partition scheme
- */
-void lomt_sort(int *array, size_t size, int left, int right)
-{
-	int paart;
-
-	if (right - left > 0)
-	{
-		paart = lomt_parti(array, size, left, right);
-		lomt_sort(array, size, left, paart - 1);
-		lomt_sort(array, size, paart + 1, right);
+		mid = front + (back - front) / 2;
+		mrge_srt_rec(subarr, buff, front, mid);
+		mrge_srt_rec(subarr, buff, mid, back);
+		mrge_sbarr(subarr, buff, front, mid, back);
 	}
 }
 
 /**
- * quick_sort - Sort an array of int in ascending
- *               using the quicksort algorithm
- * @array: An array of int
+ * merge_sort - Sort an array of int in ascending
+ *              order using the merge sort algorithm
+ * @array: array of int
  * @size: size of array
  *
- * Description: Uses the Lomuto partition scheme Prints
- *              array after each swap of two elements
+ * Description: Implements top-down merge sort algorithm
  */
-void quick_sort(int *array, size_t size)
+void merge_sort(int *array, size_t size)
 {
+	int *buff;
+
 	if (array == NULL || size < 2)
 		return;
 
-	lomt_sort(array, size, 0, size - 1);
+	buff = malloc(sizeof(int) * size);
+	if (buff == NULL)
+		return;
+
+	mrge_srt_rec(array, buff, 0, size);
+
+	free(buff);
 }

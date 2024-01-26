@@ -58,7 +58,8 @@ void cocktail_sort_list(listint_t **list);
 int geet_maxx(int *array, int sizee);
 void counting_sort(int *array, size_t size);
 
-void merge_suubarr_(int *sbarr, int *buf, size_t front, size_t mid, size_t back);
-void merg_sort_recurs(int *sbarr, int *buf, size_t front, size_t back);
-void merge_sort(int *array, size_t size);
+void mrge_sbarr(int *subarr, int *buff, size_t front, size_t mid,
+		size_t back);
+void mrge_srt_rec(int *subarr, int *buff, size_t front, size_t back);
+void merge_sort(int *array, size_t size)
 #endif
