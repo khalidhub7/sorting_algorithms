@@ -1,3 +1,4 @@
+#include "sort.h"
 /**
  * shell_sort - Sort an array of int in ascending
  *              order using the shell sort algorithm
