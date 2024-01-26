@@ -36,4 +36,6 @@ void swp_int2(int *x, int *b);
 int lomt_parti(int *array, size_t size, int left, int right);
 void lomt_sort(int *array, size_t size, int left, int right);
 void quick_sort(int *array, size_t size);
+
+void shell_sort(int *array, size_t size);
 #endif
