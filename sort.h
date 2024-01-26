@@ -30,4 +30,5 @@ void insertion_sort_list(listint_t **list);
 void swp(listint_t *x, listint_t *y);
 
 void selection_sort(int *array, size_t size);
+void swp_intt(int *x, int *g);
 #endif
