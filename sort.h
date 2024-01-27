@@ -62,4 +62,8 @@ void counting_sort(int *array, size_t size);
 void swp_int4(int *x, int *b);
 void max_hea(int *array, size_t size, size_t basee, size_t root);
 void heap_sort(int *array, size_t size);
+
+int get_mxx(int *array, int size);
+void radx_count_srt(int *array, size_t size, int sg, int *bff);
+void radix_sort(int *arr, size_t size);
 #endif
