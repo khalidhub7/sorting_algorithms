@@ -79,4 +79,14 @@ void swp_int6(int *a, int *y);
 int ho_part(int *arr, size_t siz, int lef, int rig);
 void ho_sort(int *arr, size_t siz, int lef, int rig);
 void quick_sort_hoare(int *array, size_t size);
+
+
+
+
+
+
+void merge_subarr(int *subarr, int *buff, size_t front, size_t mid,
+                size_t back);
+void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back);
+void merge_sort(int *array, size_t size);
 #endif
