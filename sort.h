@@ -66,4 +66,12 @@ void heap_sort(int *array, size_t size);
 int get_mxx(int *array, int size);
 void radx_count_srt(int *array, size_t size, int sg, int *bff);
 void radix_sort(int *arr, size_t size);
+
+#define UP 0
+#define DOWN 1
+void swp_int5(int *x, int *b);
+void btnic_mrg(int *arr, size_t size, size_t star, size_t se,
+		char flo);
+void btnic_se_(int *ar, size_t si, size_t st, size_t se, char fl);
+void bitonic_sort(int *ar, size_t si);
 #endif
