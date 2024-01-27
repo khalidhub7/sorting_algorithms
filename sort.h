@@ -74,4 +74,9 @@ void btnic_mrg(int *arr, size_t size, size_t star, size_t se,
 		char flo);
 void btnic_se_(int *ar, size_t si, size_t st, size_t se, char fl);
 void bitonic_sort(int *ar, size_t si);
+
+void swp_int6(int *a, int *y);
+int ho_part(int *arr, size_t siz, int lef, int rig);
+void ho_sort(int *arr, size_t siz, int lef, int rig);
+void quick_sort_hoare(int *array, size_t size);
 #endif
