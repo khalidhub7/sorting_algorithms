@@ -3,7 +3,7 @@
 /**
  * swp_int6 - Swap 2 ints in array
  * @a: first int to swap
- * @b: second int to swap
+ * @y: second int to swap
  */
 void swp_int6(int *a, int *y)
 {
